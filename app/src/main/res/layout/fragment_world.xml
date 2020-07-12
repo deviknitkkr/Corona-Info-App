@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent">
+
+	<ScrollView
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:id="@+id/scrollview">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:padding="50dp">
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Total Cases:"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:id="@+id/fragmentworldTextView1"
+				android:layout_centerHorizontal="true"
+				android:layout_margin="8dp"
+				android:textSize="32sp"
+				android:textStyle="bold"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="15000000"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_below="@id/fragmentworldTextView1"
+				android:layout_centerHorizontal="true"
+				android:id="@+id/total_case"
+				android:textSize="24sp"
+				android:visibility="invisible"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Deaths:"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_below="@id/total_case"
+				android:layout_centerHorizontal="true"
+				android:layout_marginTop="50dp"
+				android:layout_margin="8dp"
+				android:id="@+id/fragmentworldTextView3"
+				android:textSize="32sp"
+				android:textStyle="bold"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="700000"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_below="@id/fragmentworldTextView3"
+				android:layout_centerHorizontal="true"
+				android:id="@+id/total_death"
+				android:textSize="24sp"
+				android:textColor="#F44336"
+				android:visibility="invisible"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Recovered:"
+				android:textAppearance="?android:attr/textAppearanceLarge"
+				android:layout_below="@id/total_death"
+				android:layout_centerHorizontal="true"
+				android:layout_margin="8dp"
+				android:layout_marginTop="50dp"
+				android:id="@+id/fragmentworldTextView5"
+				android:textSize="32sp"
+				android:textStyle="bold"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="7500000"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_below="@id/fragmentworldTextView5"
+				android:layout_centerHorizontal="true"
+				android:textSize="24sp"
+				android:textColor="#4CAF50"
+				android:id="@+id/total_recover"
+				android:visibility="invisible"/>
+
+			<TextView
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:text="Stay safe"
+				android:textAppearance="?android:attr/textAppearanceMedium"
+				android:layout_centerHorizontal="true"
+				android:textColor="#1565C0"
+				android:layout_below="@id/total_recover"
+				android:layout_marginTop="16dp"/>
+
+		</RelativeLayout>
+
+	</ScrollView>
+
+</LinearLayout>
+
