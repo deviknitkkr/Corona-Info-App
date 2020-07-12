@@ -1,10 +1,102 @@
-<LinearLayout
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	android:layout_width="fill_parent"
 	android:layout_height="wrap_content"
-	android:orientation="vertical"
 	android:clickable="true"
+	android:stateListAnimator="@animator/bb"
 	android:padding="20dp"
-	android:background="#FFFFFF">
-    
-</LinearLayout>
+	android:background="#FFFFFF"
+	android:id="@+id/country_bg">
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="India"
+		android:textAppearance="?android:attr/textAppearanceLarge"
+		android:textStyle="bold"
+		android:id="@+id/country_name"
+		android:layout_marginBottom="8dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="100"
+		android:textAppearance="?android:attr/textAppearanceSmall"
+		android:layout_alignParentRight="true"
+		android:id="@+id/serial_no"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Cases:"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_below="@id/country_name"
+		android:id="@+id/rowitemTextView2"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Medium Text"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_toRightOf="@id/rowitemTextView2"
+		android:layout_alignTop="@id/rowitemTextView2"
+		android:id="@+id/country_case"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Deaths:"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_below="@id/rowitemTextView2"
+		android:id="@+id/rowitemTextView3"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Medium Text"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_toRightOf="@id/rowitemTextView3"
+		android:layout_alignTop="@id/rowitemTextView3"
+		android:textColor="#F44336"
+		android:id="@+id/country_death"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Recovered:"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_below="@id/rowitemTextView3"
+		android:id="@+id/rowitemTextView4"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Medium Text"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_toRightOf="@id/rowitemTextView4"
+		android:layout_alignTop="@id/rowitemTextView4"
+		android:textColor="#4CAF50"
+		android:id="@+id/country_recover"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Active:"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_below="@id/rowitemTextView4"
+		android:id="@+id/rowitemTextView5"
+		android:layout_marginBottom="16dp"/>
+
+	<TextView
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:text="Medium Text"
+		android:textAppearance="?android:attr/textAppearanceMedium"
+		android:layout_toRightOf="@id/rowitemTextView5"
+		android:layout_alignTop="@id/rowitemTextView5"
+		android:textColor="#ECCA00"
+		android:id="@+id/country_active"/>
+
+</RelativeLayout>
+

@@ -12,14 +12,16 @@ import com.github.ybq.android.spinkit.style.*;
 import java.util.*;
 import android.support.v7.widget.*;
 import com.devik.covid.etc.*;
+import com.devik.covid.adapter.*;
 
 public class CountryFragment extends Fragment
 {
 	private Context mContext;
 	private ProgressBar progresbar;
 	private RecyclerView mRecyclerView;
-	List<CountryDetail> list;
-
+	private List<CountryDetail> list;
+	private RecyclerViewAdapter adapter;
+	
 	public CountryFragment()
 	{}
 
@@ -39,16 +41,23 @@ public class CountryFragment extends Fragment
 		progresbar.setIndeterminateDrawable(doubleBounce);
 
 		mRecyclerView = v.findViewById(R.id.recyclerview);
-		mRecyclerView.addItemDecoration(new SpaceItemDecoration(20, mRecyclerView));
-
+		mRecyclerView.addItemDecoration(new SpaceItemDecoration(28, mRecyclerView));
+		
+		list=new ArrayList<CountryDetail>();
+		adapter=new RecyclerViewAdapter(list,mContext);
+		mRecyclerView.setAdapter(adapter);
+		
 		CountryDetailLoader loader=new CountryDetailLoader(mContext);
 		loader.setCallBackListener(new CallBackListener(){
 
 				@Override
 				public void onComplete(List<CountryDetail> response)
 				{
-					list = response;
+					//list.clear();
+					list.addAll(response);
+					
 					progresbar.setVisibility(View.GONE);
+					adapter.notifyDataSetChanged();
 				}
 
 				@Override

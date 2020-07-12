@@ -51,7 +51,7 @@ public class CountryDetailLoader
 				public void onResponse(JSONArray response) 
 				{
 					list=(new Gson()).fromJson(response.toString(),new TypeToken<List<CountryDetail>>(){}.getType());
-					listener.onUpdate(list);
+					listener.onComplete(list);
 				} 
 			}, 
 			new Response.ErrorListener() { 
@@ -64,6 +64,4 @@ public class CountryDetailLoader
 		mRequestQueue.add(jsonArrayRequest);
 
 	}
-
-
 }
