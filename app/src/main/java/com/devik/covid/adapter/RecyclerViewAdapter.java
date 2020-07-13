@@ -8,13 +8,15 @@ import android.widget.*;
 import com.devik.covid.*;
 import com.devik.covid.model.*;
 import java.util.*;
+import java.util.function.*;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>
 {
 	private Context mContext;
 	private List<CountryDetail> list;
-	
+
 	public RecyclerViewAdapter(List<CountryDetail> list , Context mContext){
+		
 		this.mContext=mContext;
 		this.list=list;
 	}
@@ -36,18 +38,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 		p1.country_death.setText(Integer.toString(tmp.getDeaths())+" | "+Integer.toString(tmp.getTodayDeaths()));
 		p1.country_recover.setText(Integer.toString(tmp.getRecovered()));
 		p1.country_active.setText(Integer.toString(tmp.getActive()));
-		p1.serial_no.setText(Integer.toString(p2));
-		
-//		if(tmp.getActive()==0)
-//		{
-//			p1.country_bg.setBackgroundColor(Color.parseColor("#8C9EFF"));
-//		}
-//		
-//		if(tmp.getTodayCases()==0)
-//		{
-//			p1.country_bg.setBackgroundColor(Color.parseColor("#69F0AE"));
-//		}
-//		
+		p1.serial_no.setText(Integer.toString(tmp.getRank()));
 		p1.setIsRecyclable(true);
 	}
 

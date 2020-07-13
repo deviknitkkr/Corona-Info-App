@@ -53,6 +53,10 @@ public class CountryDetailLoader
 				public void onResponse(JSONArray response) 
 				{
 					list=(new Gson()).fromJson(response.toString(),new TypeToken<List<CountryDetail>>(){}.getType());
+					for(int i=0;i<list.size();i++)
+					{
+						list.get(i).setRank(i);
+					}
 					listener.onComplete(list);
 				} 
 			}, 

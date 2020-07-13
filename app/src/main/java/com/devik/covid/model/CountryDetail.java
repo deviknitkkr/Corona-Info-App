@@ -14,7 +14,18 @@ public class CountryDetail
 	private int deathsPerOneMillion;
 	private int totalTests;
 	private int testsPerOneMillion;
+	private int rank;
 
+	public void setRank(int rank)
+	{
+		this.rank = rank;
+	}
+
+	public int getRank()
+	{
+		return rank;
+	}
+	
 	public void setCountry(String country)
 	{
 		this.country = country;
