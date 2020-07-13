@@ -21,6 +21,7 @@ public class CountryFragment extends Fragment
 	private RecyclerView mRecyclerView;
 	private List<CountryDetail> list;
 	private RecyclerViewAdapter adapter;
+	private CountryDetailLoader loader;
 	
 	public CountryFragment()
 	{}
@@ -41,21 +42,19 @@ public class CountryFragment extends Fragment
 		progresbar.setIndeterminateDrawable(doubleBounce);
 
 		mRecyclerView = v.findViewById(R.id.recyclerview);
-		mRecyclerView.addItemDecoration(new SpaceItemDecoration(28, mRecyclerView));
+		mRecyclerView.addItemDecoration(new SpaceItemDecoration(24, mRecyclerView));
 		
 		list=new ArrayList<CountryDetail>();
 		adapter=new RecyclerViewAdapter(list,mContext);
 		mRecyclerView.setAdapter(adapter);
 		
-		CountryDetailLoader loader=new CountryDetailLoader(mContext);
+		loader=new CountryDetailLoader(mContext);
 		loader.setCallBackListener(new CallBackListener(){
 
 				@Override
 				public void onComplete(List<CountryDetail> response)
 				{
-					//list.clear();
 					list.addAll(response);
-					
 					progresbar.setVisibility(View.GONE);
 					adapter.notifyDataSetChanged();
 				}
@@ -63,7 +62,9 @@ public class CountryFragment extends Fragment
 				@Override
 				public void onUpdate(List<CountryDetail> response)
 				{	
-					list = response;
+					list.clear();
+					list.addAll(response);
+					adapter.notifyDataSetChanged();
 				}
 
 				@Override
@@ -72,6 +73,18 @@ public class CountryFragment extends Fragment
 					Toast.makeText(mContext, e.getMessage(), Toast.LENGTH_SHORT).show();
 				}
 			});
+	}
+	
+	public SearchListener getSearchListener()
+	{
+		return new SearchListener(){
+
+			@Override
+			public void onSearch(String str)
+			{
+				loader.searchItems(str);
+			}
+		};
 	}
 
 

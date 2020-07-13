@@ -7,6 +7,8 @@ import com.google.gson.*;
 import com.google.gson.reflect.*;
 import java.util.*;
 import org.json.*;
+import java.util.function.*;
+import java.util.stream.*;
 
 public class CountryDetailLoader
 {
@@ -63,5 +65,23 @@ public class CountryDetailLoader
 			}); 
 		mRequestQueue.add(jsonArrayRequest);
 
+	}
+	
+	public void searchItems(final String str)
+	{
+		Predicate predicate=new Predicate<CountryDetail>(){
+
+			@Override
+			public boolean test(CountryDetail p1)
+			{
+				if(p1.getCountry().toLowerCase().contains(str.toLowerCase()))
+				{
+					return true;
+				}
+				return false;
+			}	
+		};
+		
+		listener.onUpdate((List<CountryDetail>)list.stream().filter(predicate).collect(Collectors.toList()));
 	}
 }
