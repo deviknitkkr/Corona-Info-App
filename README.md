@@ -1,2 +1,3 @@
 # Corona-Info-App
-This app is built using the Covid-19 Api provided by Github.
+This app is built using the COVID-19 Api provided by Github.
+
